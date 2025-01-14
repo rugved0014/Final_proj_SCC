@@ -1,4 +1,4 @@
- *{
+*{
     margin:0;
     padding: 0;
     box-sizing:border-box;
@@ -48,7 +48,7 @@ text-align: right;
     /* font-weight: 500; */
 }
 .line h2{
-    font-size: 6vw;
+    font-size: 4.5vw;
     animation-name: anime;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -92,4 +92,56 @@ text-align: right;
         font-weight: 500;    
         opacity: 1;
     }
+}
+
+#page1 #nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 3.3vw 5.4vw;
+}
+#page1 #nav-part2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2.4vw
+}
+#crsr{
+    height: 2.7vw;
+    width: 2.7vw;
+    border-radius: 50%;
+    border:1px solid #fff;
+    position: fixed;
+    z-index: 900;
+    transform:translate(-50%,-50%)
+}
+.page1-content{
+    /* background-color: aqua;   */
+    width: 73%;
+    margin-left: 27%;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative; 
+    z-index:999; 
+}
+
+.page1-content:nth-child(2){
+    margin-top: 7.5vh;
+    margin-right: 30%;
+}
+
+.page1-content h1{
+ font-size: 7.25vw;  
+ line-height:8vw; 
+}
+
+.page1-content h2{
+    font-size: 7.25vw;  
+    line-height:8vw; 
+}
+.page1-content h2:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 500;
 }

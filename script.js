@@ -1,3 +1,6 @@
+function loader_page(){
+
+
 var h5timer=document.querySelector("#line1-part1 h5");
 var grow=0;
 setInterval(function(){
@@ -27,8 +30,25 @@ tl.from("#page1",{
     ease:Power4
 })
 tl.to("#loader",{
-    display:"none"
+    opacity:0,
+    duration:0.2,
+    delay:0
 })
+tl.from(".page1-content h1,.page1-content h2",{
+    y:120,
+    stagger:0.15
+})
+}
+loader_page()
 
+function cursor_anime(){
 
-
+document.addEventListener("mousemove",function(e){
+    gsap.to("#crsr",{
+        left:e.x,
+        top:e.y,
+    })
+})
+    Shery.makeMagnet("#nav-part2 h4");  
+}
+cursor_anime()
