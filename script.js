@@ -49,6 +49,9 @@ document.addEventListener("mousemove",function(e){
         top:e.y,
     })
 })
-    Shery.makeMagnet("#nav-part2 h4");  
+    Shery.makeMagnet("#nav h4",{
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 1,
+    });  
 }
 cursor_anime()
