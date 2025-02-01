@@ -9,6 +9,7 @@
  html,body{
     height: 100%;
     width:100%; 
+    overflow: hidden;
  }
 
 #loader{
@@ -49,13 +50,14 @@ text-align: right;
 }
 .line h2{
     font-size: 4.5vw;
-    animation-name: anime;
+    animation-name: anime1;
     animation-duration: 5s;
     animation-iteration-count: infinite;
 }
 
  #main{
-    position: relative;
+     position: relative;
+     overflow: hidden;
     background-color: #030303;   
  }
  #page1{
@@ -63,7 +65,7 @@ text-align: right;
     width: 100%;
     background-color: #151515;
  }
-@keyframes anime {
+@keyframes anime1 {
     0%{
         font-family: "plain light";
         -webkit-text-stroke: 0.1px #fff;    
@@ -119,22 +121,31 @@ text-align: right;
     width: 73%;
     margin-left: 27%;
     height: fit-content;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     align-items: center;
     position: relative; 
     z-index:999; 
 }
-
 .page1-content:nth-child(2){
     margin-top: 7.5vh;
     margin-right: 30%;
 }
 
 .page1-content h1{
- font-size: 7.25vw;  
- line-height:8vw; 
+    font-size: 7.25vw;  
+    line-height:8vw; 
+    position: relative;
 }
+/* .page1-content h1::before{
+    content: "01";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left:-15%;
+    top:8%;
+} */
 
 .page1-content h2{
     font-size: 7.25vw;  
@@ -160,6 +171,9 @@ text-align: right;
     width: 70vw;
     position:relative;
     left:27%;
+    pointer-events: auto;
+    visibility: visible;
+    display: block;
     /* background-image: url(''); */
 }
 #video-cursor{
@@ -167,7 +181,7 @@ text-align: right;
     width: 6vw;
     background-color: #FFA63D;
     border-radius: 50%;
-    position: absolute;
+    position: relative;
     top:-10%;
     display: flex;
     justify-content: center;
@@ -195,14 +209,75 @@ text-align: right;
     min-height: 100vh;
     position: relative;
     width: 100%;
-    background-color: rgb(61,61,61);
+    background-color: rgb(15,15,15);
+
+}
+#page3 h1{
+    font-size: 7vw;
+    margin-left: 24vw;
+    position: relative;
+}
+#page3 h1::before{
+    content: "02";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left:-12.5%;
+    top:8%;
+}
+
+#page3 .underline{
+    height: 2px;    
+    width: 100%;
+    background-color: #fff;
+    /* margin: 2vw 10vw 10vw 24vw; */
+    margin-left: 24vw;
+    margin-right: 4vw;
+    margin-bottom: 5vw;
+}
+#image-div-container{
+    padding:1vw;    
+    position: relative;
+    /* background-color: red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.image-div{
+    height: 33vw;
+    width: 30vw;
+    flex-shrink: 0;
+    position: relative;
+    /* background-color: blue; */
+    overflow:hidden;
+}
+.image-div img{
+    height: 100%;
+    /* margin-top: 5vw; */
+    width: 100%;
+    object-fit: cover;
+}
+.page3-circle{
+    height: 15vw;
+    width: 15vw;
+    border: 1px solid #fff;
+    border-radius:50% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page3-circle svg{
+    height: 40%;
+
 }
 
 #page4{
     min-height: 100vh;
     position: relative;
     width: 100%;
-    /* background-color: rgb(61,61,61); */
+    background-color: rgb(21,21,21);
 }
 
 #page4-content{
@@ -213,8 +288,17 @@ text-align: right;
 
 #page4-content h1{
     font-size: 7vw;
+    position: relative;
 }
- 
+#page4-content h1:before{
+    content: "03";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left:-15%;
+    top:8%;
+}
 #page4-content .underline{
     height: 2px;
     width: 100%;
@@ -267,6 +351,118 @@ text-align: right;
     width:50%;
 }
 
+#page5{
+    min-height: 100vh;
+    width:100%;
+    position:relative;
+    background-color: rgb(15,15,15);
+}
 
+.elem,.elem2{
+    /* background-color:red; */
+    white-space: nowrap;
+    overflow-x: hidden;
+}
 
+.elem h1{
+    font-size: 7vw;
+    -webkit-text-stroke: 1px #fff;
+    font-weight: 400;
+    color: transparent;
+    display:inline-block;
+    animation-name: anime2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    margin-right: 2vw;
+}
 
+.elem2 h1{
+    font-size: 7vw;
+    -webkit-text-stroke: 1px #fff;
+    font-weight: 400;
+    color: transparent;
+    display:inline-block;
+    animation-name: anime2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    margin-right: 2vw;
+
+}
+
+.elem span,.elem2 span{
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    font-style: italic;
+    font-family: "silf serrif";
+}
+
+@keyframes anime2{
+    from{
+        transform: translateX(0);    
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#footer{
+    height: 100vh;
+    width:100%;
+    position: relative;
+    padding-left: 24vw;
+    padding-right: 4vw;
+    background-color: rgb(15,15,15);
+    /* margin-bottom: 6vw; */
+}
+#footer .underline{
+    height: 2px;    
+    width: 100%;
+    background-color: #fff;
+    margin:5vw 0;
+    /* margin-bottom: vw; */
+    /* padding-left: 24vw; */
+}
+
+#footer-div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-right: 10vw;
+    margin-bottom: 3vw;
+}
+
+#footer-div h5{
+    font-size: 1.2vw;
+    margin:0.3vh 0;
+    font-weight: 500;
+}
+.box{
+    width:20%;
+}
+#footer-div h6{
+    font-size: 0.9vw;
+    margin-bottom:1.5vw;
+}
+#footer h1{
+    font-size: 7vw;
+    width: 60vw;
+    position: relative;
+}
+#footer h1:before{
+    content: "04";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left:-15%;
+    top:8%;
+}
+#footer>h5{
+    font-weight: 500;
+}
+._canvas_container{
+    z-index: 9999999 !important;
+    pointer-events: none;
+}
